@@ -12,8 +12,9 @@ html, body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
-  background-attachment: fixed;
+background: radial-gradient(#ffffffaf, #11993ea8), url("../pictures/Hochbeet.png") no-repeat; /* Dunkler Farbverlauf */
+  background-size: 100% auto; /* Hintergrundbild passt sich nur auf Breite des Bildschirms an */
+  background-attachment: fixed; /* Fixiert das Hintergrundbild */
 }
 
 /* Überschriften */
@@ -26,15 +27,29 @@ h1, h2, h3, h4, h5, h6, span {
 body, p, li, a {
   font-family: Arial, sans-serif;
   font-size: 16px;
-  color: #333;
-  background-color: transparent;
+  color: #ffffff;
+  background-color: trasnsparent;
+}
+
+#bildGroß {
+  display: flex;
+  flex-direction: column;   /* Bild oben, Text unten */
+  align-items: center;      /* Bild zentrieren */
+  margin-top: 20px;
+}
+
+#bildGroß img {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 /* Navigation */
 .nav {
-  margin-right: 10px;
+  margin-right: 80px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 35px;
   font-family: Arial, sans-serif;
   color: white;
 }
@@ -130,10 +145,10 @@ header.nav nav {
 }
 
 .logoKlein {
-  max-width: 200px;
-  width: 150px;
+  max-width: 80px;
   height: auto;
   margin: 0 20px;
+  margin-top: 10px;
 }
 
 /* Overlay */
@@ -257,7 +272,7 @@ header.nav nav {
   font-family: sans-serif;
   line-height: 1.6;
   overflow: hidden; /* wichtig für float */
-  margin-top: 180px;
+  margin-top: 10px;
 }
 
 
@@ -319,3 +334,9 @@ footer {
     font-size: 20px; /* Noch etwas kleiner auf Tablets */
   }
 }
+
+
+  #qr-container {
+    margin-top: 20px;
+    display: none;
+  }

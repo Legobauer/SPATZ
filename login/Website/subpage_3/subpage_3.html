@@ -1,43 +1,63 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Template - Seite 3</title>
-    <link rel="icon" type="image/png" href="../res/pictures/logo.svg">
-    <link rel="stylesheet" href="res/styles/subpage3_style.css">
-    <script src="../res/scripts/script.js" defer></script>
-  </head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>S.P.A.T.Z. - Bestellung</title>
+        <link rel="icon" type="image/png" href="../res/pictures/SPATZ_gelb.png">
+        <link rel="stylesheet" href="../res/styles/style.css">
+        <script src="../res/scripts/script.js" defer></script>
+    </head>
 
-  <body>
-    <header class="nav">
-      <a href="../index.html" class="nav">🏠︎</a>
-      <img src="../res/pictures/logo.svg" class="logoKlein" alt="Header Logo">
-      <nav>
-        <a href="../subpage_1/subpage_1.html" class="nav">Seite 1</a>
-        <a href="../subpage_2/subpage_2.html" class="nav">Seite 2</a>
-        <a href="../subpage_3/subpage_3.html" class="nav">Seite 3</a>
-      </nav>
-    </header>
+    <body>
+        <div id="logoGroß">
+            <img src="../res/pictures/SPATZ_logo_full.png" alt="Logo">
+        </div>
 
-    <section id="content" class="overlay">
-      <h1><strong>Seite 3 - Inhalt</strong></h1>
-      <p>Platzhalter für Inhalt</p>
-      <p>Fügen Sie hier Ihren Inhalt ein.</p>
-      <p>Dies ist eine saubere Vorlage für Ihre Website.</p>
-    </section>
+        <header class="nav">
+            <a href="../index.html" class="nav">🏠︎</a>
+            <img src="../res/pictures/SPATZ_logo.png" class="logoKlein" alt="Header Logo">
+            <nav>
+                <a href="../subpage_1/subpage_1.html" class="nav">Anleitung</a>
+                <a href="../subpage_2/subpage_2.html" class="nav">Teile</a>
+                <a href="subpage_3.html" class="nav">Bestellung</a>
+            </nav>
+        </header>
 
-  </body>
+        <section id="section1" class="overlay">
+            <h1>In Auftrag geben</h1>
+            <p>Der Bau dieses Produkts kann in Auftrag gegeben werden. Dafür müssen sie nur den AGB zustimmen und mit ein wenig Lieferzeit rechnen.</p>
+        
 
-  <footer>
-    <div>
-      &copy; 2026
-    </div>
-    <div class="footer-Quellen">
-      <br>
-      Weitere Informationen:
-      <br>
-      Kontakt: info@example.com
-    </div>
-  </footer>
+            <button onclick="zeigeQR()" 
+                style="padding: 12px 20px; font-size: 18px; cursor: pointer;">Bestellen
+            </button>
+
+            <div id="qr-container">
+            <h2>QR-Code</h2>
+            <img id="qr-code" src="" alt="QR Code">
+            </div>
+
+            <script>
+            function zeigeQR() {
+            const text = "Ihre Bestellung wurde in Auftrag gegeben, Auftrag angenommen!";
+            const url = "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=" + encodeURIComponent(text);
+
+            document.getElementById("qr-code").src = url;
+            document.getElementById("qr-container").style.display = "block";
+            }
+            </script>
+
+        </section>
+
+        <footer>
+            <div>
+            &copy; Piet Hein - 2026-05
+            </div>
+            <div class="footer-Quellen">
+            <strong>Disclaimer:</strong> Dieses Projekt wurde VOR dem 06.05.2026 begonnen und ein Abbruch der Entwicklung war zu dem Zeitpunkt nicht mehr möglich.
+            <br>
+            </div>
+        </footer>
+    </body>
 </html>

@@ -12,8 +12,9 @@ html, body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
-  background-attachment: fixed;
+background: radial-gradient(#ffffffaf, #11993ea8), url("../../../res/pictures/Hochbeet.png") no-repeat; /* Dunkler Farbverlauf */
+  background-size: 100% auto; /* Hintergrundbild passt sich nur auf Breite des Bildschirms an */
+  background-attachment: fixed; /* Fixiert das Hintergrundbild */
 }
 
 /* Überschriften */
@@ -26,98 +27,199 @@ h1, h2, h3, h4, h5, h6, span {
 body, p, li, a {
   font-family: Arial, sans-serif;
   font-size: 16px;
-  color: #333;
-  background-color: transparent;
+  color: #ffffff;
+  background-color: trasnsparent;
+}
+
+#bildGroß {
+  display: flex;
+  flex-direction: column;   /* Bild oben, Text unten */
+  align-items: center;      /* Bild zentrieren */
+  margin-top: 20px;
+}
+
+#bildGroß img {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 /* Navigation */
 .nav {
-  margin-right: 10px;
+  margin-right: 80px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 35px;
   font-family: Arial, sans-serif;
   color: white;
 }
 
-
-/* Container für alle bilder Logo */
-.coverbild {
-  margin-top: 120px;
+/* Header */
+header.nav {
   display: flex;
-  flex-direction: column;   /* Bild oben, Text unten */
-  align-items: center;      /* Bild zentrieren */
-}
-
-/* Einheitliches Design für alle Bilder */
-.coverbild img {
-  max-width: 800px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background: linear-gradient(135deg, #333, #555);
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  border-radius: 10px;
+  height: 80px;
+  z-index: 1000;
+  transition: top 0.3s ease;
 }
 
-/* Bildunterschrift */
-.coverbild p {
-  width: 100%;
-  max-width: 800px;
-  text-align: left;        /* Text links am Bild */
-  margin-top: 10px;
-  font-size: 20px;
-}
-
-
-.bilder {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;                 /* kleiner Abstand */
-  max-width: 800px;         /* gleiche Breite wie der Block darüber */
-  margin: 0 auto 50px auto; /* zentrieren */
-}
-
-.bild img {
-  box-shadow: 0 6px 20px #0a33619c;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.bild p {
-  max-width: 500px;
-  font-size: 20px;
-  text-align: left;        /* Text links am Bild */
-}
-
-.bild_big {
+header.nav nav {
   display: flex;
-  flex-direction: column;   /* Bild oben, Text unten */
-  align-items: center;      /* Bild zentrieren */
-  margin-bottom: 100px;
-}
-.bild_big img {
-  box-shadow: 0 6px 20px #0a33619c;
-  max-width: 800px;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+  gap: 20px;
+  flex-grow: 1;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.bild_big p {
-  margin-top: 10px;
+/* Container für alle Blöcke */
+.blöcke {
   max-width: 1100px;
-  font-size: 20px;
-  text-align: left;        /* Text links am Bild */
+  margin: 100px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
 }
 
+/* Einheitliches Styling für alle Blöcke */
+.block {
+  background: linear-gradient(135deg, #fff, #f9f9f9);
+  color: #333;
+  font-family: sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  flex: 1 1 45%;
+  min-width: 300px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+}
 
-/* Biotronik Logo im Header */
+/* Titelgestaltung */
+.block h1, .block h2, .block h3, .block h4 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+.block p {
+  font-size: 16px;
+  color: #666;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #555;
+}
+
+/* Container für großes Logo */
+#logoGroß {
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+}
+
+#logoGroß img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+}
+
 .logoKlein {
-  max-width: 800px;
+  max-width: 80px;
+  height: auto;
+  margin: 0 20px;
+  margin-top: 10px;
+}
+
+/* Overlay */
+.overlay {
+  border-radius: 10px;
+  max-width: 1000px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin: 50px auto;
+  color: #333;
+  font-family: sans-serif;
+  line-height: 1.8;
+  border: 1px solid #ddd;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+footer div {
+  margin: 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .block {
+    flex: 1 1 100%;
+  }
+
+  header.nav {
+    padding: 10px 20px;
+  }
+
+  #logoGroß img {
+    max-width: 400px;
+  }
+}
+
+/* Logo im Header */
+.logoKlein {
   width: 280px; 
   /* width: feste Breite für das Header-Logo */
   height: auto;
   margin-left: 20px;
   margin-right: 20px;
 }
+
+
+/* Buttons */
+.btn {
+  margin-top: 20px; /* Abstand nach oben */
+  background: rgba(255, 255, 255, 0.800); /* Weißer Hintergrund mit leichter Transparenz */
+  color: black; /* Schwarze Schrift */
+  display: inline-block; /* Bessere Abstandskontrolle */
+  padding: 5px 10px; /* Innenabstand */
+  border-radius: 20px; /* Runde Ecken */
+  text-decoration: none; /* Unterstreichung entfernen */
+  margin-right: 10px; /* Abstand rechts vom Button */
+  font-weight: bold; /* Fettere Schrift */
+  border: 5px solid transparent; /* Unsichtbarer Rahmen für Übergangseffekt */
+  transition: all 0.3s ease; /* Sanfter Übergang beim Hover */
+  font-size: 20px; /* Größere Schriftgröße */
+}
+
 
 /* Eigenschaften des Headers */
 header.nav {
@@ -150,6 +252,15 @@ header.nav nav {
 }
 
 
+/* Fließtext */
+.Text {
+  font-size: 23px; /* Schriftgröße für Fließtext */
+  margin-bottom: 10px; /* Abstand nach unten */
+}
+
+
+
+
 .overlay {
   border-radius: 10px;
   max-width: 1100px;
@@ -161,9 +272,11 @@ header.nav nav {
   font-family: sans-serif;
   line-height: 1.6;
   overflow: hidden; /* wichtig für float */
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
+
+/* Bild-Container */
 .icon-block {
   float: left;
   margin-right: 20px;
@@ -172,21 +285,17 @@ header.nav nav {
   height: auto;
 }
 
-/* Buttons */
-.btn {
-  background: rgba(255, 255, 255, 0.8);
-  color: black;
-  display: inline;          /* macht ihn so klein wie möglich */
-  padding: 2px 6px;         /* kleiner Innenabstand */
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;          /* kleiner */
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-  margin-left: 6px;         /* kleiner Abstand zum Text */
+.mail-copy {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #ffffff; /* normales Link-Blau */
+    transition: color 0.2s ease;
 }
 
+.mail-copy:hover {
+    color: #33aaff; /* hellblau beim Hover */
+    text-decoration: none;
+}
 
 
 /* Footer Bereich */

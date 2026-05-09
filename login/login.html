@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<style>
+    body {
+        font-family: Arial;
+        background:#f0f0f0;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+    }
+    .box {
+        background:white;
+        padding:20px;
+        border-radius:8px;
+        width:320px;
+        box-shadow:0 0 10px rgba(0,0,0,0.2);
+    }
+    input {
+        width:100%;
+        max-width: 298px;
+        padding:10px;
+        margin:8px 0;
+        border-radius:5px;
+        border:1px solid #ccc;
+    }
+    button {
+        width:100%;
+        padding:10px;
+        background:#0078ff;
+        color:white;
+        border:none;
+        border-radius:5px;
+        cursor:pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Login</h2>
+
+    <input type="text" id="user" placeholder="Benutzername">
+    <input type="password" id="pass" placeholder="Passwort">
+    <button onclick="login()">Login</button>
+
+    <p id="msg" style="color:red;"></p>
+</div>
+
+<script>
+    // Zugangsdaten (NICHT sicher, aber perfekt für GitHub Pages)
+    const USER = "u7Q9xP2kL0";
+    const PASS = "F9r!eT4z#1pA";
+
+    function login() {
+        const u = document.getElementById("user").value;
+        const p = document.getElementById("pass").value;
+
+        if (u === USER && p === PASS) {
+            // Weiterleitung in den Website-Ordner
+            window.location.href = "Website/index.html";
+        } else {
+            document.getElementById("msg").textContent = "❌ Falsche Zugangsdaten";
+        }
+    }
+</script>
+
+</body>
+</html>

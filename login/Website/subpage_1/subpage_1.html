@@ -1,58 +1,199 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Template - Seite 1</title>
-    <link rel="icon" type="image/png" href="../res/pictures/logo.svg">
-    <link rel="stylesheet" href="res/styles/subpage1_style.css">
-    <script src="../res/scripts/script.js" defer></script>
-  </head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>S.P.A.T.Z. - Anleitung</title>
+        <link rel="icon" type="image/png" href="../res/pictures/SPATZ_gelb.png">
+        <link rel="stylesheet" href="res/styles/subpage1_style.css">
+        <script src="../res/scripts/script.js" defer></script>
+    </head>
 
-  <body>
-    <header class="nav">
-      <a href="../index.html" class="nav">🏠︎</a>
-      <img src="../res/pictures/logo.svg" class="logoKlein" alt="Header Logo">
-      <nav>
-        <a href="../subpage_1/subpage_1.html" class="nav">Seite 1</a>
-        <a href="../subpage_2/subpage_2.html" class="nav">Seite 2</a>
-        <a href="../subpage_3/subpage_3.html" class="nav">Seite 3</a>
-      </nav>
-    </header>
+    <body>
+        <!-- Großes Logo im Body -->
+        <div id="logoGroß">
+            <img src="../res/pictures/SPATZ_logo_full.png" alt="Logo">
+        </div>
 
-    <div id="bildGroß">
-      <a href="res/pictures/image.jpg" target="_blank">
-        <img src="res/pictures/image.jpg" alt="Coverbild">
-      </a>
-      <p>&copy; 2026: Bildunterschrift</p>
-    </div>
+        <header class="nav">
+            <a href="../index.html" class="nav">🏠︎</a>
+            <img src="../res/pictures/SPATZ_logo.png" class="logoKlein" alt="Header Logo">
+            <nav>
+                <a href="../subpage_1/subpage_1.html" class="nav">Anleitung</a>
+                <a href="../subpage_2/subpage_2.html" class="nav">Teile</a>
+                <a href="../subpage_3/subpage_3.html" class="nav">Bestellung</a>
+            </nav>
+        </header>
 
-    <section id="content" class="overlay">
-      <h1><strong>Seite 1 - Inhalt</strong></h1>
-      <h2>Abschnitt 1:</h2>
-      <p>Platzhalter für Inhalt 1</p>
+        
+    
+        <section id="section1" class="overlay">
+          <h1><strong>S.P.A.T.Z. – Aufbau- und Funktionsanleitung</strong></h1>
+            <h2><strong>Einführung</strong></h2>
+            <p>
+            Dieses Dokument beschreibt den vollständigen Aufbau des S.P.A.T.Z.-Systems 
+            (<em>Sensor-Plattform zur Automatischen Tier-Zurückhaltung</em>) in einer 
+            anfängerfreundlichen, klar nachvollziehbaren Form. Alle Schritte sind so erklärt, 
+            dass auch Einsteiger ohne Vorkenntnisse die Schaltung erfolgreich nachbauen können.
+            </p>
 
-      <h2>Abschnitt 2:</h2>
-      <p>Platzhalter für Inhalt 2</p>
+            <hr>
 
-      <h2>Abschnitt 3:</h2>
-      <p>Platzhalter für Inhalt 3</p>
-    </section>
+            <h2><strong>1. Übersicht des Systems</strong></h2>
+            <p>
+            Das System besteht aus vier Hauptkomponenten:
+            </p>
+            <ul>
+              <li><strong>PIR-Sensoren</strong> zur Bewegungserkennung</li>
+              <li><strong>ESP32-Mikrocontroller</strong> zur Auswertung und Steuerung</li>
+              <li><strong>Servomotor</strong> zur Ausrichtung der Wasserdüse</li>
+              <li><strong>Pumpe + MOSFET</strong> zur Erzeugung des Wasserstrahls</li>
+            </ul>
 
-  </body>
+            <p>
+            Alle Komponenten werden über eine gemeinsame Stromversorgung betrieben, bestehend aus 
+            einer 12-V-Quelle und einem Step-Down-Wandler, der daraus stabile 5 V erzeugt.
+            </p>
 
-  <footer>
-    <div>
-      &copy; 2026
-    </div>
-    <div class="footer-Quellen">
-      <br>
-      Weitere Informationen:
-      <br>
-      Kontakt: info@example.com
-    </div>
-  </footer>
-</html>
-     </div>
-  </footer>
+            <hr>
+
+            <h2><strong>2. Tinkercad-Schaltplan</strong></h2>
+
+            
+            <img src="../res/pictures/Schaltplan_SPATZ.png" alt="Schaltplan Platzhalter" style="max-width:900px; max-height:auto;">
+            
+
+            <hr>
+
+            <h2><strong>3. Schritt-für-Schritt Aufbau</strong></h2>
+
+            <h3><strong>3.1 Stromversorgung</strong></h3>
+            <p>
+            Das System benötigt zwei Spannungen:
+            </p>
+            <ul>
+              <li><strong>12 V</strong> für die Wasserpumpe</li>
+              <li><strong>5 V</strong> für ESP32, PIR-Sensoren und Servomotor</li>
+            </ul>
+
+            <p>
+            Der Step-Down-Wandler wird wie folgt angeschlossen:</p>
+            <ul>
+              <li><strong>VIN+</strong> → 12-V-Plus</li>
+              <li><strong>VIN−</strong> → 12-V-Masse</li>
+              <li><strong>VOUT+</strong> → 5-V-Versorgung für ESP32, PIRs, Servo</li>
+              <li><strong>VOUT−</strong> → gemeinsame Masse</li>
+            </ul>
+
+            <p><strong>Wichtig:</strong> Alle GND-Anschlüsse müssen miteinander verbunden sein.</p>
+
+            <hr>
+
+            <h3><strong>3.2 PIR-Sensoren anschließen</strong></h3>
+            <p>Jeder PIR-Sensor besitzt drei Anschlüsse:</p>
+            <ul>
+              <li><strong>Leistung (VCC)</strong> → 5 V</li>
+              <li><strong>Masse (GND)</strong> → GND</li>
+              <li><strong>Signal (OUT)</strong> → ein GPIO-Pin des ESP32</li>
+            </ul>
+
+            <p>Beispiel:</p>
+            <ul>
+              <li>PIR 1 → GPIO 32</li>
+              <li>PIR 2 → GPIO 33</li>
+            </ul>
+
+            <hr>
+
+            <h3><strong>3.3 Servomotor anschließen</strong></h3>
+            <ul>
+              <li><strong>Rot (VCC)</strong> → 5 V</li>
+              <li><strong>Braun/Schwarz (GND)</strong> → GND</li>
+              <li><strong>Orange/Gelb (Signal)</strong> → z. B. GPIO 25</li>
+            </ul>
+
+            <p>
+            Der Servo richtet die Wasserdüse automatisch in Richtung der erkannten Bewegung aus.
+            </p>
+
+            <hr>
+
+            <h3><strong>3.4 Pumpe und MOSFET</strong></h3>
+
+            <h4><strong>Pumpe:</strong></h4>
+            <ul>
+              <li><strong>+</strong> → direkt an 12 V</li>
+              <li><strong>−</strong> → an den <strong>Drain</strong> des MOSFET</li>
+            </ul>
+
+            <h4><strong>MOSFET (z. B. IRLZ44N):</strong></h4>
+            <ul>
+              <li><strong>Source</strong> → GND</li>
+              <li><strong>Drain</strong> → Pumpen-Minus</li>
+              <li><strong>Gate</strong> → ESP32 GPIO 26 (über 100 Ω)</li>
+            </ul>
+
+            <p>
+            Ein <strong>10-kΩ-Pulldown-Widerstand</strong> zwischen Gate und GND verhindert, 
+            dass die Pumpe unkontrolliert startet.
+            </p>
+
+            <p>
+            Eine <strong>Freilaufdiode</strong> (z. B. 1N4007) wird parallel zur Pumpe geschaltet:
+            </p>
+            <ul>
+              <li><strong>Anode</strong> → Pumpen-Minus</li>
+              <li><strong>Kathode</strong> → Pumpen-Plus</li>
+            </ul>
+
+            <hr>
+
+            <h2><strong>4. Funktionsablauf</strong></h2>
+            <ol>
+              <li>Ein PIR-Sensor erkennt Bewegung.</li>
+              <li>Der ESP32 wertet das Signal aus.</li>
+              <li>Der Servomotor richtet die Düse in die erkannte Richtung.</li>
+              <li>Der MOSFET schaltet die Pumpe für einen kurzen Impuls ein.</li>
+              <li>Das System kehrt in den Überwachungsmodus zurück.</li>
+            </ol>
+
+            <hr>
+
+            <h2><strong>5. Hinweise für Anfänger</strong></h2>
+            <ul>
+              <li>Verbinde immer zuerst die Masseleitungen.</li>
+              <li>Prüfe die 5-V-Ausgangsspannung des Step-Down-Wandlers vor dem Anschließen des ESP32.</li>
+              <li>Achte darauf, dass der MOSFET ein <strong>Logic-Level-Typ</strong> ist.</li>
+              <li>Teste die Schaltung zuerst ohne Wasser.</li>
+            </ul>
+
+            <hr>
+
+            <h2><strong>Schaltplan herunterladen</strong></h2>
+            <br>
+
+            <!-- HIER DEINE DATEI EINTRAGEN -->
+              <a href="../res/data/SPATZ_Schaltung.brd" 
+                download 
+                style="display:inline-block; padding:10px 15px; background:#0078d4; color:white; text-decoration:none; border-radius:5px;">
+                📥 (.brd) Datei herunterladen
+              </a>
+        </section>
+
+        <div id="bildGroß">
+            <img src="../res/pictures/image.png" alt="Bild">
+        </div>
+    </body>
+
+    <footer>
+        <div>
+        &copy; Piet Hein - 2026-05
+        </div>
+        <div class="footer-Quellen">
+        <strong>Disclaimer:</strong> Dieses Projekt wurde VOR dem 06.05.2026 begonnen und ein Abbruch der Entwicklung war zu dem Zeitpunkt nicht mehr möglich.
+        <br>
+        </div>
+    </footer>
+        </div>
+    </footer>
 </html>

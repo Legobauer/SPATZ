@@ -1,89 +1,159 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Template - Seite 2</title>
-    <link rel="icon" type="image/png" href="../res/pictures/logo.svg">
-    <link rel="stylesheet" href="res/styles/subpage2_style.css">
-    <script src="../res/scripts/script.js" defer></script>
-  </head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>S.P.A.T.Z. - Teile</title>
+        <link rel="icon" type="image/png" href="../res/pictures/SPATZ_gelb.png">
+        <link rel="stylesheet" href="res/styles/subpage2_style.css">
+        <script src="../res/scripts/script.js" defer></script>
+    </head>
 
-  <body>
-    <header class="nav">
-      <a href="../index.html" class="nav">🏠︎</a>
-      <img src="../res/pictures/logo.svg" class="logoKlein" alt="Header Logo">
-      <nav>
-        <a href="../subpage_1/subpage_1.html" class="nav">Seite 1</a>
-        <a href="../subpage_2/subpage_2.html" class="nav">Seite 2</a>
-        <a href="../subpage_3/subpage_3.html" class="nav">Seite 3</a>
-      </nav>
-    </header>
+    <body>
+        <!-- Großes Logo im Body -->
+        <div id="logoGroß">
+            <img src="../res/pictures/SPATZ_logo_full.png" alt="Logo">
+        </div>
 
-    <div class="coverbild">
-      <a href="res/pictures/image.jpg" target="_blank">
-        <img src="res/pictures/image.jpg" alt="Coverbild">
-      </a>
-      <p>&copy; 2026: Bildunterschrift</p>
-    </div>
+        <header class="nav">
+            <a href="../index.html" class="nav">🏠︎</a>
+            <img src="../res/pictures/SPATZ_logo.png" class="logoKlein" alt="Header Logo">
+            <nav>
+                <a href="../subpage_1/subpage_1.html" class="nav">Anleitung</a>
+                <a href="../subpage_2/subpage_2.html" class="nav">Teile</a>
+                <a href="../subpage_3/subpage_3.html" class="nav">Bestellung</a>
+            </nav>
+        </header>
 
-    <section id="content" class="overlay">
-      <h1><strong>Seite 2 - Inhalt</strong></h1>
-      <h2>Abschnitt 1:</h2>
-      <p>Platzhalter für Inhalt 1</p>
+        
+    
+        <section id="section1" class="overlay">
+            </p><h1><strong>S.P.A.T.Z. – Teileliste</strong></h1>
+            <p>
+            Diese Seite enthält alle für das Projekt benötigten Komponenten, jeweils mit kurzer Beschreibung 
+            und einem Link zur Bezugsquelle.
+            </p>
 
-      <h2>Abschnitt 2:</h2>
-      <p>Platzhalter für Inhalt 2</p>
-    </section>
+            <hr>
 
-    <div class="bilder">
-      <div class="bild">
-        <a href="res/pictures/image1.jpg" target="_blank">
-          <img src="res/pictures/image1.jpg" alt="Bild 1">
-        </a>
-        <p>&copy; 2026: Bildunterschrift 1</p>
-      </div>
+            <h2><strong>1. Wasserpumpe (12 V)</strong></h2>
+            <p>
+            Eine kleine 12‑V‑Membranpumpe, die genug Druck erzeugt, um einen gerichteten Wasserstrahl 
+            für die Abschreckung abzugeben.
+            </p>
+            <p>
+            <strong>Link:</strong><br>
+            <a href="https://www.amazon.de/dp/B0GXZRKJQM/?smid=A3LABPT2IDIFT4&tag=preisvergleich-idealode-21&linkCode=asn&creative=6742&camp=1638&creativeASIN=B0GXZRKJQM&ascsubtag=2026-04-27_50d0f1334a70026f91bbf3fe922566163a0b5cfb07df135eeadcbe8e7274fe79&th=1&psc=1" target="_blank">
+            Amazon – 12V Wasserpumpe
+            </a>
+            </p>
 
-      <div class="bild">
-        <a href="res/pictures/image2.jpg" target="_blank">
-          <img src="res/pictures/image2.jpg" alt="Bild 2">
-        </a>
-        <p>&copy; 2026: Bildunterschrift 2</p>
-      </div>
-    </div>
+            <hr>
 
-  </body>
+            <h2><strong>2. MOSFET (IRLZ44N oder kompatibel)</strong></h2>
+            <p>
+            Ein Logic‑Level‑N‑Kanal‑MOSFET, der die Pumpe zuverlässig schalten kann. 
+            Er wird vom ESP‑Board angesteuert und übernimmt die Lastschaltung.
+            </p>
+            <p>
+            <strong>Link:</strong><br>
+            <a href="https://www.reichelt.de/de/de/shop/produkt/mosfet_n-ch_55v_47a_110w_to-220ab-129819?utm_source=psuma&utm_medium=idealo.de&PROVID=2378#closemodal" target="_blank">
+            Reichelt – IRLZ44N MOSFET
+            </a>
+            </p>
 
-  <footer>
-    <div>
-      &copy; 2026
-    </div>
-    <div class="footer-Quellen">
-      <br>
-      Weitere Informationen:
-      <br>
-      Kontakt: info@example.com
-    </div>
-  </footer>
-  </a>
-  <p>&copy; Piet Hein: Gelöteter und programmierter Herzsimulator mit angezeigter Herzkurve</p>
-</div>
+            <hr>
 
-  
+            <h2><strong>3. PIR‑Sensor (HC‑SR501)</strong></h2>
+            <p>
+            Der PIR‑Sensor erkennt Bewegungen anhand von Infrarot‑Strahlung. 
+            Zwei Stück werden verwendet, um ein breiteres Sichtfeld abzudecken.
+            </p>
+            <p>
+            <strong>Link:</strong><br>
+            <a href="https://www.berrybase.de/hc-sr501-pir-sensor-infrarot-bewegungsmelder" target="_blank">
+            BerryBase – HC‑SR501 PIR Sensor
+            </a>
+            </p>
+
+            <hr>
+
+            <h2><strong>4. Mikrocontroller (NodeMCU V3 / ESP8266)</strong></h2>
+            <p>
+            Das zentrale Steuermodul, das die PIR‑Signale auswertet, den Servo steuert 
+            und die Pumpe über den MOSFET aktiviert.
+            </p>
+            <p>
+            <strong>Link:</strong><br>
+            <a href="https://www.berrybase.de/nodemcu-v3-esp8266-development-board-ch340g" target="_blank">
+            BerryBase – NodeMCU V3 ESP8266
+            </a>
+            </p>
+
+            <hr>
+
+            <h2><strong>5. Servomotor (SG90 oder kompatibel)</strong></h2>
+            <p>
+            Der Servomotor richtet die Wasserdüse in die Richtung der erkannten Bewegung aus.
+            </p>
+         
+
+            <hr>
+
+            <h2><strong>6. Step‑Down‑Wandler (12 V → 5 V)</strong></h2>
+            <p>
+            Versorgt ESP8266, PIR‑Sensoren und Servo mit stabilen 5 V aus der 12‑V‑Quelle.
+            </p>
+            
+
+            <hr>
+
+            <h2><strong>7. Kleinteile</strong></h2>
+            <ul>
+              <li>100‑Ohm‑Widerstand (Gate‑Widerstand)</li>
+              <li>10‑kΩ‑Widerstand (Pulldown)</li>
+              <li>1N4007 Diode (Freilaufdiode)</li>
+              <li>Jumper‑Kabel</li>
+              <li>Breadboard oder Lötplatine</li>
+            </ul>
+            <p>
+          
+
+            <hr>
+
+            <h2><strong>8. Optional: Gehäuse / Halterungen</strong></h2>
+            <p>
+            Für den Außeneinsatz empfiehlt sich ein wetterfestes Gehäuse.
+            </p>
+            <p>
+
+            <hr>
+
+            <h2><strong>3D-Modell Teile herunterladen</strong></h2>
+            <br>
+
+            <!-- HIER DEINE DATEI EINTRAGEN -->
+              <a href="../res/data/Teile.stl" 
+                download 
+                style="display:inline-block; padding:10px 15px; background:#0078d4; color:white; text-decoration:none; border-radius:5px;">
+                📥 (.stl) Datei herunterladen
+              </a>
+        </section>
+
+        <div id="bildGroß">
+            <img src="../res/pictures/image.png" alt="Bild">
+        </div>
     </body>
 
-  <footer>
-     <div>
-     &copy; Piet Hein, Klasse: 2023/2
-     </div>
-
-     <div class="footer-Quellen">
-     <br>
-     Quellen:
-     <br>
-     Biotronik Logo: https://upload.wikimedia.org/wikipedia/commons/2/25/Biotronik_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
-     <br>
-     Alle weiteren Bilder sind eigene Aufnahmen und alle Informationen wurden während des Praktikums gesammelt.
-     </div>
-  </footer>
+    <footer>
+        <div>
+        &copy; Piet Hein - 2026-05
+        </div>
+        <div class="footer-Quellen">
+        <strong>Disclaimer:</strong> Dieses Projekt wurde VOR dem 06.05.2026 begonnen und ein Abbruch der Entwicklung war zu dem Zeitpunkt nicht mehr möglich.
+        <br>
+        </div>
+    </footer>
+        </div>
+    </footer>
 </html>
