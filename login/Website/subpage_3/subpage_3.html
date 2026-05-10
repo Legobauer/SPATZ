@@ -33,15 +33,14 @@
                 style="padding: 12px 20px; font-size: 18px; cursor: pointer;">Bestellen
             </button>
 
-            <div id="qr-container">
+            <div id="qr-container" style="display: none;">
             <h2>QR-Code</h2>
             <img id="qr-code" src="" alt="QR Code">
             </div>
 
             <script>
             function zeigeQR() {
-            const text = "Ihre Bestellung wurde in Auftrag gegeben, Auftrag angenommen!";
-            const url = "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=" + encodeURIComponent(text);
+            const url = "../res/data/qr.png";
 
             document.getElementById("qr-code").src = url;
             document.getElementById("qr-container").style.display = "block";
